@@ -175,3 +175,4 @@ cython_debug/
 .AppleDouble
 .LSOverride
 dify-plugin-graphiti
+*.difypkg
