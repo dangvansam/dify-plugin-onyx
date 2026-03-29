@@ -1,0 +1,33 @@
+identity:
+  name: get_chat_session
+  author: dangvansam
+  label:
+    en_US: Get Chat Session
+    zh_Hans: Get Chat Session
+    pt_BR: Get Chat Session
+    ja_JP: Get Chat Session
+
+description:
+  human:
+    en_US: Retrieves an existing chat session details by ID from Onyx.
+    zh_Hans: Retrieves an existing chat session details by ID from Onyx.
+    pt_BR: Retrieves an existing chat session details by ID from Onyx.
+    ja_JP: Retrieves an existing chat session details by ID from Onyx.
+  llm: >-
+    Retrieves the details and message history of a specific chat session by its UUID.
+    Can be used to extract context or analyze a conversation.
+
+parameters:
+  - name: session_id
+    type: string
+    required: true
+    label:
+      en_US: Chat Session ID
+    human_description:
+      en_US: The UUID of the chat session to retrieve.
+    llm_description: The UUID of the chat session to retrieve.
+    form: form
+
+extra:
+  python:
+    source: tools/get_chat_session.py

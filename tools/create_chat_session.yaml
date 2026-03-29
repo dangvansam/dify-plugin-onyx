@@ -1,0 +1,54 @@
+identity:
+  name: create_chat_session
+  author: dangvansam
+  label:
+    en_US: Create Chat Session
+    zh_Hans: Create Chat Session
+    pt_BR: Create Chat Session
+    ja_JP: Create Chat Session
+
+description:
+  human:
+    en_US: Creates a new chat session in Onyx.
+    zh_Hans: Creates a new chat session in Onyx.
+    pt_BR: Creates a new chat session in Onyx.
+    ja_JP: Creates a new chat session in Onyx.
+  llm: >-
+    Creates a new chat session in Onyx and returns the unique chat_session_id.
+    Use this before sending the first message to a new conversation.
+
+parameters:
+  - name: persona_id
+    type: number
+    required: false
+    label:
+      en_US: Persona ID
+    human_description:
+      en_US: ID of the persona to associate with the chat session (default 0).
+    llm_description: ID of the persona to associate with the chat session (default 0).
+    form: form
+    default: 0
+
+  - name: description
+    type: string
+    required: false
+    label:
+      en_US: Description
+    human_description:
+      en_US: Optional description for the new chat session.
+    llm_description: Optional description for the new chat session.
+    form: form
+
+  - name: project_id
+    type: number
+    required: false
+    label:
+      en_US: Project ID
+    human_description:
+      en_US: ID of the project to associate this session with.
+    llm_description: ID of the project to associate this session with.
+    form: form
+
+extra:
+  python:
+    source: tools/create_chat_session.py

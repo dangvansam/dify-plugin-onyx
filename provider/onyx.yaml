@@ -1,0 +1,45 @@
+identity:
+  author: "dangvansam"
+  name: "onyx"
+  label:
+    en_US: "onyx"
+    zh_Hans: "onyx"
+    pt_BR: "onyx"
+    ja_JP: "onyx"
+  description:
+    en_US: "Integrate Onyx with Dify"
+    zh_Hans: "Integrate Onyx with Dify"
+    pt_BR: "Integrate Onyx with Dify"
+    ja_JP: "Integrate Onyx with Dify"
+  icon: "icon.svg"
+
+credentials_for_provider:
+  onyx_api_base:
+    type: text-input
+    required: true
+    label:
+      en_US: Onyx API Base URL
+    placeholder:
+      en_US: "https://cloud.onyx.app/api"
+    help:
+      en_US: "The Base URL for the Onyx API"
+    default: "https://cloud.onyx.app/api"
+  onyx_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: Onyx API Key
+    placeholder:
+      en_US: "Enter your Bearer Token"
+    help:
+      en_US: "Authentication bearer token mapped from Onyx."
+
+tools:
+  - tools/create_chat_session.yaml
+  - tools/send_chat_message.yaml
+  - tools/get_chat_session.yaml
+
+extra:
+  python:
+    source: provider/onyx.py
+

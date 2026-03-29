@@ -1,0 +1,43 @@
+identity:
+  name: send_chat_message
+  author: dangvansam
+  label:
+    en_US: Send Chat Message
+    zh_Hans: Send Chat Message
+    pt_BR: Send Chat Message
+    ja_JP: Send Chat Message
+
+description:
+  human:
+    en_US: Sends a message to Onyx and returns the textual response.
+    zh_Hans: Sends a message to Onyx and returns the textual response.
+    pt_BR: Sends a message to Onyx and returns the textual response.
+    ja_JP: Sends a message to Onyx and returns the textual response.
+  llm: >-
+    Sends a message to an Onyx chat session and returns the AI's answer.
+    Must provide either a session ID or creating a new anonymous flow without it.
+
+parameters:
+  - name: message
+    type: string
+    required: true
+    label:
+      en_US: Message
+    human_description:
+      en_US: The user's message query to send to Onyx.
+    llm_description: The user's query/message to ask Onyx.
+    form: llm
+
+  - name: chat_session_id
+    type: string
+    required: false
+    label:
+      en_US: Chat Session ID
+    human_description:
+      en_US: Existing chat session UUID.
+    llm_description: The UUID of the chat session to continue. Omit for a fresh anonymous message.
+    form: llm
+
+extra:
+  python:
+    source: tools/send_chat_message.py
