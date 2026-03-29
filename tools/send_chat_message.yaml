@@ -38,6 +38,17 @@ parameters:
     llm_description: The UUID of the chat session to continue. Omit for a fresh anonymous message.
     form: llm
 
+  - name: stream
+    type: boolean
+    required: false
+    label:
+      en_US: Stream Output
+    human_description:
+      en_US: Whether to stream the response chunk-by-chunk.
+    llm_description: Whether to stream the response chunk-by-chunk.
+    form: form
+    default: false
+
 extra:
   python:
     source: tools/send_chat_message.py
